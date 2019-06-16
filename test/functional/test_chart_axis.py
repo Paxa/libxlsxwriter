@@ -2,7 +2,7 @@
 #
 # Tests for libxlsxwriter.
 #
-# Copyright 2014-2018, John McNamara, jmcnamara@cpan.org
+# Copyright 2014-2019, John McNamara, jmcnamara@cpan.org
 #
 
 import base_test_class
@@ -130,3 +130,6 @@ class TestCompareXLSXFiles(base_test_class.XLSXBaseTest):
 
     def test_chart_axis41(self):
         self.run_exe_test('test_chart_axis41')
+
+    def test_chart_axis42(self):
+        self.run_exe_test('test_chart_axis42')

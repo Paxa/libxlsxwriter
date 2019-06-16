@@ -2,7 +2,7 @@
 #
 # Tests for libxlsxwriter.
 #
-# Copyright 2014-2018, John McNamara, jmcnamara@cpan.org
+# Copyright 2014-2019, John McNamara, jmcnamara@cpan.org
 #
 
 import base_test_class
@@ -25,9 +25,9 @@ class TestCompareXLSXFiles(base_test_class.XLSXBaseTest):
     def test_chart_blank04(self):
         self.run_exe_test('test_chart_blank04')
 
-    # Chartsheet.
-    # def test_chart_blank05(self):
-    #     self.run_exe_test('test_chart_blank05')
+    def test_chart_blank05(self):
+        self.ignore_elements = {'xl/drawings/drawing1.xml': ['<xdr:ext']}
+        self.run_exe_test('test_chart_blank05')
 
     def test_chart_blank06(self):
         self.run_exe_test('test_chart_blank06')

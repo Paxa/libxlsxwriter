@@ -2,7 +2,7 @@
 #
 # Tests for libxlsxwriter.
 #
-# Copyright 2014-2018, John McNamara, jmcnamara@cpan.org
+# Copyright 2014-2019, John McNamara, jmcnamara@cpan.org
 #
 
 import base_test_class
@@ -19,8 +19,17 @@ class TestCompareXLSXFiles(base_test_class.XLSXBaseTest):
     def test_optimize02(self):
         self.run_exe_test('test_optimize02')
 
+    def test_optimize04(self):
+        self.run_exe_test('test_optimize04')
+
+    def test_optimize05(self):
+        self.run_exe_test('test_optimize05')
+
     def test_optimize06(self):
         self.run_exe_test('test_optimize06')
+
+    def test_optimize08(self):
+        self.run_exe_test('test_optimize08')
 
     # Skip some of the XlsxWriter tests until the required functionality is ported.
 
