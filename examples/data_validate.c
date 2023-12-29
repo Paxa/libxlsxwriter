@@ -6,7 +6,7 @@
  * that a user enters in a cell and to display help and warning messages. It
  * also allows you to restrict input to values in a drop down list.
  *
- * Copyright 2014-2018, John McNamara, jmcnamara@cpan.org
+ * Copyright 2014-2021, John McNamara, jmcnamara@cpan.org
  */
 
 
@@ -45,9 +45,10 @@ void write_worksheet_data(lxw_worksheet *worksheet, lxw_format *format) {
  */
 int main() {
 
-    lxw_workbook        *workbook  = new_workbook("data_validate1.xlsx");
+    lxw_workbook        *workbook  = workbook_new("data_validate1.xlsx");
     lxw_worksheet       *worksheet = workbook_add_worksheet(workbook, NULL);
-    lxw_data_validation *data_validation = calloc(1, sizeof(lxw_data_validation));
+    lxw_data_validation *data_validation =
+        (lxw_data_validation *)calloc(1, sizeof(lxw_data_validation));
 
     /* Add a format to use to highlight the header cells. */
     lxw_format *format = workbook_add_format(workbook);
@@ -154,7 +155,7 @@ int main() {
                            "Select a value from a drop down list",
                            NULL);
 
-    char *list[] = {"open", "high", "close", NULL};
+    const char *list[] = {"open", "high", "close", NULL};
 
     data_validation->validate   = LXW_VALIDATION_TYPE_LIST;
     data_validation->value_list = list;
@@ -170,7 +171,7 @@ int main() {
                            "Select a value from a drop down list (using a cell range)",
                            NULL);
 
-    data_validation->validate      = LXW_VALIDATION_TYPE_LIST;
+    data_validation->validate      = LXW_VALIDATION_TYPE_LIST_FORMULA;
     data_validation->value_formula = "=$E$4:$G$4";
 
     worksheet_data_validation_cell(worksheet, CELL("B15"), data_validation);

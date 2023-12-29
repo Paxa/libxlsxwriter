@@ -3,7 +3,7 @@
  *
  * Test to compare output against Excel files.
  *
- * Copyright 2014-2019, John McNamara, jmcnamara@cpan.org
+ * Copyright 2014-2022, John McNamara, jmcnamara@cpan.org
  *
  */
 
@@ -11,10 +11,10 @@
 
 int main() {
 
-    lxw_workbook  *workbook  = new_workbook("test_data_validation03.xlsx");
+    lxw_workbook  *workbook  = workbook_new("test_data_validation03.xlsx");
     lxw_worksheet *worksheet = workbook_add_worksheet(workbook, NULL);
-    char *list1[] = {"Foo", "Bar", "Baz", NULL};
-    char *list2[] = {
+    const char *list1[] = {"Foo", "Bar", "Baz", NULL};
+    const char *list2[] = {
         "Foobar", "Foobas", "Foobat", "Foobau", "Foobav", "Foobaw", "Foobax",
         "Foobay", "Foobaz", "Foobba", "Foobbb", "Foobbc", "Foobbd", "Foobbe",
         "Foobbf", "Foobbg", "Foobbh", "Foobbi", "Foobbj", "Foobbk", "Foobbl",

@@ -1,7 +1,7 @@
 /*
  * An example of creating Excel radar charts using the libxlsxwriter library.
  *
- * Copyright 2014-2018, John McNamara, jmcnamara@cpan.org
+ * Copyright 2014-2021, John McNamara, jmcnamara@cpan.org
  *
  */
 
@@ -37,7 +37,7 @@ void write_worksheet_data(lxw_worksheet *worksheet, lxw_format *bold) {
  */
 int main() {
 
-    lxw_workbook     *workbook  = new_workbook("chart_radar.xlsx");
+    lxw_workbook     *workbook  = workbook_new("chart_radar.xlsx");
     lxw_worksheet    *worksheet = workbook_add_worksheet(workbook, NULL);
     lxw_chart_series *series;
 
@@ -69,10 +69,9 @@ int main() {
     chart_series_set_values(series,     "Sheet1", 1, 2, 6, 2); /* "=Sheet1!$C$2:$C$7" */
     chart_series_set_name_range(series, "Sheet1", 0, 2);       /* "=Sheet1!$C$1"      */
 
-    /* Add a chart title and some axis labels. */
-    chart_title_set_name(chart,        "Results of sample analysis");
-    chart_axis_set_name(chart->x_axis, "Test number");
-    chart_axis_set_name(chart->y_axis, "Sample length (mm)");
+    /* Add a chart title. */
+    chart_title_set_name(chart, "Results of sample analysis");
+
 
     /* Set an Excel chart style. */
     chart_set_style(chart, 11);
@@ -98,10 +97,8 @@ int main() {
     /* Set the name for the series instead of the default "Series 2". */
     chart_series_set_name(series, "=Sheet1!$C$1");
 
-    /* Add a chart title and some axis labels. */
-    chart_title_set_name(chart,        "Results of sample analysis");
-    chart_axis_set_name(chart->x_axis, "Test number");
-    chart_axis_set_name(chart->y_axis, "Sample length (mm)");
+    /* Add a chart title. */
+    chart_title_set_name(chart, "Results of sample analysis");
 
     /* Set an Excel chart style. */
     chart_set_style(chart, 12);
@@ -127,10 +124,8 @@ int main() {
     /* Set the name for the series instead of the default "Series 2". */
     chart_series_set_name(series, "=Sheet1!$C$1");
 
-    /* Add a chart title and some axis labels. */
-    chart_title_set_name(chart,        "Results of sample analysis");
-    chart_axis_set_name(chart->x_axis, "Test number");
-    chart_axis_set_name(chart->y_axis, "Sample length (mm)");
+    /* Add a chart title. */
+    chart_title_set_name(chart, "Results of sample analysis");
 
     /* Set an Excel chart style. */
     chart_set_style(chart, 13);

@@ -3,7 +3,7 @@
  *
  * Test to compare output against Excel files.
  *
- * Copyright 2014-2019, John McNamara, jmcnamara@cpan.org
+ * Copyright 2014-2022, John McNamara, jmcnamara@cpan.org
  *
  */
 
@@ -21,7 +21,7 @@ int main() {
 
     (void)worksheet;
 
-    free(properties->hyperlink_base);
+    free((void *)properties->hyperlink_base);
     free(properties);
 
     return workbook_close(workbook);

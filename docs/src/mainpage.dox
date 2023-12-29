@@ -20,7 +20,10 @@ features such as:
 - Autofilters.
 - Charts.
 - Data validation and drop down lists.
-- Worksheet PNG/JPEG images.
+- Conditional formatting.
+- Worksheet PNG/JPEG/GIF images.
+- Cell comments.
+- Support for adding Macros.
 - Memory optimization mode for writing large files.
 - Source code available on [GitHub](https://github.com/jmcnamara/libxlsxwriter).
 - FreeBSD @ref license.
@@ -54,9 +57,15 @@ following sections for more information:
 - @ref working_with_formulas
 - @ref working_with_dates
 - @ref working_with_charts
+- @ref working_with_object_positioning
+- @ref working_with_autofilters
 - @ref working_with_data_validation
+- @ref working_with_conditional_formatting
+- @ref working_with_tables
+- @ref working_with_comments
 - @ref working_with_outlines
 - @ref working_with_memory
+- @ref working_with_macros
 
 - @ref examples
 - @ref running_the_tests
