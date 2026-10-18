@@ -3,13 +3,14 @@
  *
  * Test to compare output against Excel files.
  *
- * Copyright 2014-2022, John McNamara, jmcnamara@cpan.org
+ * SPDX-License-Identifier: BSD-2-Clause
+ * Copyright 2014-2026, John McNamara, jmcnamara@cpan.org.
  *
  */
 
 #include "xlsxwriter.h"
 
-unsigned char image_buffer[] = {
+static unsigned char image_buffer[] = {
     0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a, 0x00, 0x00, 0x00, 0x0d,
     0x49, 0x48, 0x44, 0x52, 0x00, 0x00, 0x00, 0x20, 0x00, 0x00, 0x00, 0x20,
     0x08, 0x02, 0x00, 0x00, 0x00, 0xfc, 0x18, 0xed, 0xa3, 0x00, 0x00, 0x00,
@@ -29,14 +30,14 @@ unsigned char image_buffer[] = {
     0x49, 0x45, 0x4e, 0x44, 0xae, 0x42, 0x60, 0x82
 };
 
-unsigned int image_size = 200;
+static unsigned int image_size = 200;
 
 int main() {
 
     lxw_workbook  *workbook  = workbook_new("test_hyperlink81.xlsx");
     lxw_worksheet *worksheet = workbook_add_worksheet(workbook, NULL);
 
-    lxw_image_options options = {.description = "red.png", 
+    lxw_image_options options = {.description = "red.png",
                                  .url = "https://github.com/jmcnamara"};
 
     worksheet_write_url(worksheet, CELL("A1"), "https://github.com/jmcnamara" , NULL);

@@ -2,7 +2,8 @@
 #
 # Tests for libxlsxwriter.
 #
-# Copyright 2014-2022, John McNamara, jmcnamara@cpan.org
+# SPDX-License-Identifier: BSD-2-Clause
+# Copyright 2014-2026, John McNamara, jmcnamara@cpan.org.
 #
 
 import os
@@ -162,6 +163,9 @@ class TestCompareXLSXFiles(base_test_class.XLSXBaseTest):
 
     def test_image58(self):
         self.run_exe_test('test_image58')
+
+    def test_image59(self):
+        self.run_exe_test('test_image59')
 
     # Test in-memory image handling.
     def test_image81(self):
